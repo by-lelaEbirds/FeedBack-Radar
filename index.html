@@ -21,6 +21,9 @@
     </header>
 
     <main class="container">
+      <!-- Matrix canvas atrás dos cards -->
+      <canvas id="matrixCanvas" class="matrix"></canvas>
+
       <section class="card form-card" aria-labelledby="form-title">
         <div class="card-header">
           <h2 id="form-title">Envie seu feedback</h2>
@@ -60,7 +63,6 @@
         <div class="card-header">
           <h2 id="chart-title">Distribuição das notas</h2>
         </div>
-        <p class="chart-label">Número de Feedbacks</p>
         <canvas id="chartCanvas"></canvas>
       </section>
     </main>
@@ -68,9 +70,6 @@
     <footer class="footer">
       <small>Missão 3 • Feedback Radar — Matheus Peres da Silva</small>
     </footer>
-
-    <!-- matrix canvas overlay -->
-    <canvas id="matrixCanvas" class="matrix"></canvas>
   </div>
 
   <script src="js/script.js"></script>
