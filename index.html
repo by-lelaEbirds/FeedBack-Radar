@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Feedback Radar — Matheus</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Chart.js via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <h1>Feedback Radar</h1>
+        <p class="subtitle">Coletar — Visualizar — Agir</p>
+      </div>
+      <div class="controls">
+        <button id="themeBtn" aria-label="Alternar tema">🖥️ Tema</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card form-card" aria-labelledby="form-title">
+        <div class="card-header">
+          <h2 id="form-title">Envie seu feedback</h2>
+        </div>
+        <form id="feedbackForm" class="form">
+          <div class="row">
+            <input id="nome" placeholder="Seu nome" required />
+            <select id="nota" required>
+              <option value="">Nota</option>
+              <option value="1">1 — Péssimo</option>
+              <option value="2">2 — Ruim</option>
+              <option value="3">3 — Regular</option>
+              <option value="4">4 — Bom</option>
+              <option value="5">5 — Excelente</option>
+            </select>
+          </div>
+          <textarea id="comentario" rows="3" placeholder="Comentário (opcional)"></textarea>
+          <div class="actions">
+            <button type="submit" class="btn primary">Enviar</button>
+            <button type="button" id="clearAll" class="btn danger">Limpar tudo</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card list-card" aria-labelledby="list-title">
+        <div class="card-header">
+          <h2 id="list-title">Feedbacks</h2>
+          <div class="filters">
+            <button data-filter="all" class="filter active">Todas</button>
+            <button data-filter="4-5" class="filter">Notas 4-5</button>
+          </div>
+        </div>
+        <ul id="feedbackList" class="feedback-list" aria-live="polite"></ul>
+      </section>
+
+      <section class="card chart-card" aria-labelledby="chart-title">
+        <div class="card-header">
+          <h2 id="chart-title">Distribuição das notas</h2>
+        </div>
+        <canvas id="chartCanvas"></canvas>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Missão 3 • Feedback Radar — Matheus Peres da Silva</small>
+    </footer>
+
+    <!-- matrix canvas overlay -->
+    <canvas id="matrixCanvas" class="matrix"></canvas>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
